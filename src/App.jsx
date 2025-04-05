@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import EditorTabs from './components/EditorTabs';
 import MarkdownEditor from './components/MarkdownEditor';
 import PreviewPane from './components/PreviewPane';
-import { useDocumentManager } from '../src/utils/documentManager';
+import { useDocumentManager } from './utils/documentManager';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,10 +27,7 @@ export default function App() {
         onCreateNew={() => createFile(`Documento ${documents.length + 1}`)}
         onCreateFolder={() => createFolder(`Carpeta ${documents.length + 1}`)}
         onDelete={deleteDocument}
-        onRename={(id) => {
-          const newName = prompt('Nuevo nombre:');
-          if (newName) renameDocument(id, newName);
-        }}
+        onRename={renameDocument}
       />
 
       <div className="flex-1 flex flex-col">

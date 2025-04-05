@@ -26,7 +26,7 @@ export function useDocumentManager() {
       children: []
     };
     
-    setDocuments([...documents, newFolder]);
+    setDocuments([...documents,   newFolder]);
   };
 
   const deleteDocument = (id) => {
