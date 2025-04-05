@@ -16,7 +16,7 @@ export default function MarkdownEditor({ content, onChange, darkMode }) {
       extensions={[markdown()]}
       theme={darkMode ? oneDark : oneDark}
       basicSetup={{
-        lineNumbers: false,
+        lineNumbers: true,
         highlightActiveLine: false,
         autocompletion: true,
       }}

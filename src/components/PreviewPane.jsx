@@ -24,7 +24,7 @@ export default function PreviewPane({ content, darkMode }) {
     <div className={`flex-1 h-[calc(100vh-3rem)] overflow-y-auto p-6 prose 
       ${darkMode ? 
         'prose-invert bg-gray-900' : 
-        'bg-white'
+        'bg-gray-900'
       } max-w-none`}
     >
       <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

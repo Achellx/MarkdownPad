@@ -44,6 +44,7 @@ export function useDocumentManager() {
     setDocuments(documents.map(doc => 
       doc.id === id ? { ...doc, content } : doc
     ));
+    localStorage.setItem('documents', JSON.stringify(documents));
   };
 
   return {
@@ -54,6 +55,7 @@ export function useDocumentManager() {
     deleteDocument,
     renameDocument,
     updateFileContent,
+    setDocuments,
     setActiveDocument: setActiveDoc
   };
 }
