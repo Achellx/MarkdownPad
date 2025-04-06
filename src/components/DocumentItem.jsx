@@ -14,8 +14,8 @@ export default function DocumentItem({doc, onRename, onDelete}) {
 
     return (
         <div
-            className="group flex items-center justify-between p-2 mb-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-            <FiEdit className="text-gray-500 dark:text-gray-400 mr-1" />
+            className="group flex items-center justify-between p-2 mb-1 rounded-lg hover:bg-gray-100 dark:hover:bg-[#272113] transition-colors">
+            <FiEdit className="dark:text-[#f3eddc] mr-1" />
             <div className="flex items-center flex-1">
                 {isEditing ? (
                     <input
@@ -24,11 +24,11 @@ export default function DocumentItem({doc, onRename, onDelete}) {
                         onChange={(e) => setNewName(e.target.value)}
                         onBlur={handleSave}
                         onKeyDown={(e) => e.key === 'Enter' && handleSave()}
-                        className="flex-1 bg-transparent border-b border-blue-500 dark:border-blue-400 focus:outline-none w-1 px-1 mr-2 text-gray-700 dark:text-gray-200"
+                        className="flex-1 bg-transparent border-b dark:border-[#997814] focus:outline-none w-1 px-1 mr-2 text-gray-700 dark:text-gray-200"
                         autoFocus
                     />
                 ) : (
-                    <span className="text-gray-700 dark:text-gray-200 truncate">
+                    <span className="dark:text-[#f3eddc] truncate">
             {doc.name}
           </span>
                 )}
@@ -42,7 +42,7 @@ export default function DocumentItem({doc, onRename, onDelete}) {
                             setNewName(doc.name);
                         }
                     }}
-                    className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400"
+                    className="text-[#997814] dark:hover:text-[#e8d087] cursor-pointer"
                 >
                     {isEditing ? (
                         <FiCheck className="w-4 h-4"/>
@@ -53,7 +53,7 @@ export default function DocumentItem({doc, onRename, onDelete}) {
 
                 <button
                     onClick={() => onDelete(doc.id)}
-                    className="text-red-500 hover:text-red-600 dark:hover:text-red-400"
+                    className="text-red-500 hover:text-red-600 dark:hover:text-red-400 cursor-pointer"
                 >
                     <FiTrash className="w-4 h-4"/>
                 </button>

@@ -17,18 +17,6 @@ export function useDocumentManager() {
     setActiveDoc(newFile.id);
   };
 
-  const createFolder = (name) => {
-    const newFolder = {
-      id: `folder-${Date.now()}`,
-      type: 'folder',
-      name: name,
-      createdAt: new Date().toISOString(),
-      children: []
-    };
-    
-    setDocuments([...documents,   newFolder]);
-  };
-
   const deleteDocument = (id) => {
     setDocuments(documents.filter(doc => doc.id !== id));
     if (activeDoc === id) setActiveDoc(null);
@@ -51,11 +39,10 @@ export function useDocumentManager() {
     documents,
     activeDoc,
     createFile,
-    createFolder,
     deleteDocument,
     renameDocument,
     updateFileContent,
     setDocuments,
-    setActiveDocument: setActiveDoc
+    setActiveDocument: setActiveDoc,
   };
 }
