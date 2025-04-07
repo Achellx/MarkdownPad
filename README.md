@@ -25,3 +25,4 @@ npm run electron
 - [ ] Agregar un boton de exportar a pdf a la toolbar de electron
 - [ ] Estilos para la previsualizacion de la vista previa
 - [ ] Implementacion de los temas (No es urgente ni importante)
+- [ ] Icono para la app
