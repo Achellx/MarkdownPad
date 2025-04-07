@@ -35,6 +35,7 @@ export default function App() {
       <div className="flex h-full bg-[#1b1607]">
         <Dashboard
             documents={documents}
+            activeDoc={activeDoc}
             onCreateNew={() => createFile(`Documento ${documents.length + 1}`)}
             onDelete={deleteDocument}
             onRename={renameDocument}

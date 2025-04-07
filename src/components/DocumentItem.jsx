@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {FiEdit, FiCheck, FiTrash} from 'react-icons/fi'
 
-export default function DocumentItem({doc, onRename, onDelete}) {
+export default function DocumentItem({doc, onRename, onDelete, onTabChange, isActive}) {
     const [isEditing, setIsEditing] = useState(false);
     const [newName, setNewName] = useState(doc.name);
 
@@ -12,9 +12,16 @@ export default function DocumentItem({doc, onRename, onDelete}) {
         setIsEditing(false);
     };
 
+    const handleClick = () => {
+        if (!isEditing) {
+            onTabChange(doc.id);
+        }
+    };
+
     return (
         <div
-            className="group flex items-center justify-between p-2 mb-1 rounded-lg hover:bg-gray-100 dark:hover:bg-[#272113] transition-colors">
+            onClick={handleClick}
+            className="group flex items-center justify-between p-2 mb-1 rounded-lg hover:bg-gray-100 dark:hover:bg-[#272113] transition-colors cursor-pointer">
             <FiEdit className="dark:text-[#f3eddc] mr-1" />
             <div className="flex items-center flex-1">
                 {isEditing ? (
@@ -36,7 +43,8 @@ export default function DocumentItem({doc, onRename, onDelete}) {
 
             <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 <button
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.stopPropagation();
                         if (!isEditing) {
                             setIsEditing(true);
                             setNewName(doc.name);

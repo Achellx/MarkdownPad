@@ -7,7 +7,8 @@ export default function Dashboard({
                                       onCreateNew,
                                       onDelete,
                                       onRename,
-                                      onTabChange
+                                      onTabChange,
+                                      activeDoc
                                   }) {
     const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -52,11 +53,12 @@ export default function Dashboard({
                     >
                         {documents.map((doc) => (
                             <DocumentItem
-                                onClick={() => onTabChange(doc.id)}
                                 key={doc.id}
                                 doc={doc}
                                 onRename={onRename}
                                 onDelete={onDelete}
+                                onTabChange={onTabChange}
+                                isActive={activeDoc === doc.id}
                             />
                         ))}
                     </div>
