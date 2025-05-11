@@ -21,7 +21,8 @@ npm run electron
 # Pendientes
 
 - [ ] Exportacion rapida de markdown a pdf (No se que librerias usar)
+- [ ] Posibilidad de agregar imagenes
 - [ ] Agregar las keycaps de los shortcuts
-- [ ] Agregar un boton de exportar a pdf a la toolbar de electron
+- [x] Agregar un boton de exportar a pdf a la toolbar de electron
 - [ ] Estilos para la previsualizacion de la vista previa
 - [ ] Implementacion de los temas (No es urgente ni importante)

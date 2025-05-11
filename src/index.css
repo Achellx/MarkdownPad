@@ -8,6 +8,25 @@
 /* Asegúrate de importar la fuente */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"');
 
+@layer utilities {
+  @keyframes tabIn {
+    0%   { opacity: 0; transform: translateY(20px) scale(0.95) }
+    100% { opacity: 1; transform: translateY(0)     scale(1)    }
+  }
+  .animate-tab-in {
+    animation: tabIn 0.3s ease-out;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+
 body {
   font-family: 'Inter', sans-serif;
 }
