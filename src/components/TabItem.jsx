@@ -17,7 +17,7 @@ export default function TabItem({ doc, isActive, onTabChange, onTabClose }) {
         onComplete: () => onTabClose(doc.id),
       })
       // Fade + slide + scale
-      .to(el, { opacity: 0, y: 10, scale: 0.95 })
+      .to(el, { opacity: 0, y: 10, scale: 0.95, filter: "blur(24px)" })
       // Colapsar la altura
       .to(
         el,

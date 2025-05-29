@@ -77,7 +77,7 @@ export default function MarkdownEditor({ content, onChange }) {
   const cmTheme = isDarkMode ? customDarkTheme : customLightTheme;
 
   return (
-    <div className="h-full rounded-[36px] ">
+    <div className="h-full rounded-[36px] animate-tab-in">
       <CodeMirror
         value={content}
         onChange={handleChange}
